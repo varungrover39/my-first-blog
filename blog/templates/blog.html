@@ -1,0 +1,21 @@
+{%extends 'base.html'%}
+{%block content%}
+<link rel ="stylesheet" href="/static/css/styles.css" type="text/css"/>
+{%for post in object_list%}
+<div class="mainContent">
+	<div class='content'>
+		<article class="typicalArticle">
+			<header>
+				<h3><a href="/blog/{{post.id}}">{{post.title}}</a></h3>
+			</header>
+			<footer>
+				<p class='postInfo'>on {{ post.date}}</p>
+			</footer>
+			<content>
+				<p>{{post.body|safe|linebreaks}}</p>
+			</content>
+		</article>
+	</div>
+</div>
+{%endfor%}
+{%endblock%}
